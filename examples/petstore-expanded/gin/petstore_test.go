@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/deepmap/oapi-codegen/v2/examples/petstore-expanded/gin/api"
 	"github.com/oapi-codegen/testutil"
+	"github.com/realtymecom/oapi-codegen/v2/examples/petstore-expanded/gin/api"
 	"github.com/stretchr/testify/assert"
 )
 

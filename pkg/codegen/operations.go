@@ -23,8 +23,8 @@ import (
 	"text/template"
 	"unicode"
 
-	"github.com/deepmap/oapi-codegen/v2/pkg/util"
 	"github.com/getkin/kin-openapi/openapi3"
+	"github.com/realtymecom/oapi-codegen/v2/pkg/util"
 )
 
 type ParameterDefinition struct {
