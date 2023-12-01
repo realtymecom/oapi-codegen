@@ -95,7 +95,7 @@ func (c *Client) {{if .HasBody}}p{{end}}{{$opid}}{{if .HasBody}}WithBody{{end}}(
 			Field("status", http.StatusText(statusCode)).Field("body", string(rsp.Body)).
 			Msg("status code failure").Err()
 	}
-	if cType := rsp.ContentType(); cType != "json" {
+	if cType := rsp.ContentType(); !strings.HasSuffix(cType, "json") {
 		return rsp, errs.Wrap(err).Field("contentType", cType).Msg("content type failure").Err()
 	}
 
@@ -126,7 +126,7 @@ func (c *Client) {{$opid}}{{.Suffix}}(ctx context.Context{{genParamArgs $pathPar
 			Field("status", http.StatusText(statusCode)).Field("body", string(rsp.Body)).
 			Msg("status code failure").Err()
 	}
-	if cType := rsp.ContentType(); cType != "json" {
+	if cType := rsp.ContentType(); !strings.HasSuffix(cType, "json") {
 		return rsp, errs.Wrap(err).Field("contentType", cType).Msg("content type failure").Err()
 	}
 

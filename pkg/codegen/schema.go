@@ -371,8 +371,8 @@ func GenerateGoSchema(sref *openapi3.SchemaRef, path []string) (Schema, error) {
 					return Schema{}, fmt.Errorf("error generating Go schema for property '%s': %w", pName, err)
 				}
 
-				// required := StringInArray(pName, schema.Required)
-				required := true
+				required := StringInArray(pName, schema.Required)
+				// required := true
 
 				if (pSchema.HasAdditionalProperties || len(pSchema.UnionElements) != 0) && pSchema.RefType == "" {
 					// If we have fields present which have additional properties or union values,
